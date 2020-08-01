@@ -14,7 +14,7 @@ const BackgroundImg = ({ img, styleClass, title, children }) => {
 };
 
 BackgroundImg.defaultProps = {
-  title: "default title",
+  title: "Welcome to Agape Café",
   styleClass: "default-background",
 };
 

@@ -4,7 +4,7 @@ import { Link } from "gatsby";
 
 import Title from "./Title";
 
-const Info = () => {
+const Info = ({ path, btnName }) => {
   return (
     <section className="py-5">
       <div className="container">
@@ -19,9 +19,9 @@ const Info = () => {
               laboriosam! Unde autem nesciunt beatae, facere illum rerum
               corporis nihil, sint, commodi in debitis quia.
             </p>
-            <Link to="/about">
+            <Link to={path}>
               <button className="btn text-uppercase btn-yellow">
-                about us
+                {btnName}
               </button>
             </Link>
           </div>

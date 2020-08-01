@@ -24,7 +24,7 @@ const Header = ({ siteTitle }) => {
   };
 
   return (
-    <nav className="navbar navbar-expand-sm bg-dark navbar-dark">
+    <nav className="navbar navbar-fixed-top navbar-expand-sm bg-dark navbar-dark">
       <Link to="/" className="navbar-brand">
         <img style={{ height: "50px", width: "50px" }} src={logo} alt="logo" />
         <span style={{ margin: "10px 0px 0px 10px" }}>{siteTitle}</span>

@@ -6,6 +6,7 @@ import Layout from "../components/layout";
 import SEO from "../components/seo";
 import BackgroundImg from "../components/BackgroundImg";
 import Info from "../components/Info";
+import Menu from "../components/Menu";
 
 const IndexPage = () => {
   const data = useStaticQuery(graphql`
@@ -17,13 +18,29 @@ const IndexPage = () => {
           }
         }
       }
+      items: allContentfulCoffeeItem {
+        nodes {
+          title
+          price
+          image {
+            fixed(height: 50, width: 50) {
+              ...GatsbyContentfulFixed
+            }
+          }
+          description {
+            description
+          }
+          category
+        }
+      }
     }
   `);
   return (
     <Layout>
       <SEO title="Home" />
       <BackgroundImg img={data.file.img.fluid} />
-      <Info />
+      <Info path="/about" btnName="About us" />
+      <Menu items={data.items.nodes} />
     </Layout>
   );
 };

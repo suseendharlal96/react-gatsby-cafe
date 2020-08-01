@@ -10,7 +10,7 @@ import Info from "../components/Info";
 const About = () => {
   const data = useStaticQuery(graphql`
     query {
-      file(relativePath: { eq: "about-background.jpeg" }) {
+      file(relativePath: { eq: "coffeeabout.jpg" }) {
         img: childImageSharp {
           fluid {
             ...GatsbyImageSharpFluid
@@ -27,7 +27,7 @@ const About = () => {
         styleClass="about-background"
         img={data.file.img.fluid}
       />
-      <Info />
+      <Info path="/" btnName="Home" />
     </Layout>
   );
 };

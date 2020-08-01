@@ -10,7 +10,7 @@ import Info from "../components/Info";
 const IndexPage = () => {
   const data = useStaticQuery(graphql`
     query {
-      file(relativePath: { eq: "default-background.jpeg" }) {
+      file(relativePath: { eq: "coffeehome.jpg" }) {
         img: childImageSharp {
           fluid {
             ...GatsbyImageSharpFluid

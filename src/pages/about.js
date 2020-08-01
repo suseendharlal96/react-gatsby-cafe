@@ -7,10 +7,10 @@ import SEO from "../components/seo";
 import BackgroundImg from "../components/BackgroundImg";
 import Info from "../components/Info";
 
-const IndexPage = () => {
+const About = () => {
   const data = useStaticQuery(graphql`
     query {
-      file(relativePath: { eq: "default-background.jpeg" }) {
+      file(relativePath: { eq: "about-background.jpeg" }) {
         img: childImageSharp {
           fluid {
             ...GatsbyImageSharpFluid
@@ -22,10 +22,14 @@ const IndexPage = () => {
   return (
     <Layout>
       <SEO title="Home" />
-      <BackgroundImg img={data.file.img.fluid} />
+      <BackgroundImg
+        title="About Us"
+        styleClass="about-background"
+        img={data.file.img.fluid}
+      />
       <Info />
     </Layout>
   );
 };
 
-export default IndexPage;
+export default About;

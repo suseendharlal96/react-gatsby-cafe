@@ -41,7 +41,6 @@ const IndexPage = () => {
       }
     }
   `);
-  console.log(data)
   return (
     <Layout>
       <SEO title="Home" />

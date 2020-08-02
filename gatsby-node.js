@@ -3,7 +3,6 @@ const path = require("path");
 const slugify = require("./src/util/slugify");
 
 exports.onCreateNode = ({ node, actions }) => {
-  //   console.log(node);
   const { createNodeField } = actions;
   if (
     node.internal.type === "ContentfulCoffeeItem" ||

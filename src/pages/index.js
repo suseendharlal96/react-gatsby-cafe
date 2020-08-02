@@ -7,6 +7,8 @@ import SEO from "../components/seo";
 import BackgroundImg from "../components/BackgroundImg";
 import Info from "../components/Info";
 import Menu from "../components/Menu";
+import Products from "../components/Products";
+import Contact from "../components/Contact";
 
 const IndexPage = () => {
   const data = useStaticQuery(graphql`
@@ -21,6 +23,7 @@ const IndexPage = () => {
       items: allContentfulCoffeeItem {
         nodes {
           title
+          id
           price
           image {
             fixed(height: 50, width: 50) {
@@ -41,6 +44,8 @@ const IndexPage = () => {
       <BackgroundImg img={data.file.img.fluid} />
       <Info path="/about" btnName="About us" />
       <Menu items={data.items.nodes} />
+      <Products />
+      <Contact />
     </Layout>
   );
 };

@@ -18,10 +18,14 @@ const Products = () => {
               ...GatsbyContentfulFluid
             }
           }
+          fields {
+            slug
+          }
         }
       }
     }
   `);
+  console.log(data);
   return (
     <section className="py-5">
       <div className="container">

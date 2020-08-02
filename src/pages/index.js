@@ -34,10 +34,14 @@ const IndexPage = () => {
             description
           }
           category
+          fields{
+            slug
+          }
         }
       }
     }
   `);
+  console.log(data)
   return (
     <Layout>
       <SEO title="Home" />

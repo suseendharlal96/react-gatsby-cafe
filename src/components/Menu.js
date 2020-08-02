@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 
+import { Link } from "gatsby";
 import Img from "gatsby-image";
 
 import Title from "./Title";
@@ -68,12 +69,16 @@ const Menu = ({ items }) => {
                   className="col-11 col-md-6 my-2 d-flex mx-auto"
                 >
                   <div>
-                    <Img fixed={node.image.fixed} />
+                    <Link to={`/menu/${node.fields.slug}`}>
+                      <Img fixed={node.image.fixed} />
+                    </Link>
                   </div>
 
                   <div className="flex-grow-1 px-3">
                     <div className="d-flex justify-content-between">
-                      <h6 className="mb-0">{node.title}</h6>
+                      <Link to={`/menu/${node.fields.slug}`}>
+                        <h6 className="mb-0">{node.title}</h6>
+                      </Link>
                       <h6 className="text-yellow mb-0">${node.price}</h6>
                     </div>
 

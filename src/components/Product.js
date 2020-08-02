@@ -1,5 +1,6 @@
 import React from "react";
 
+import { Link } from "gatsby";
 import Img from "gatsby-image";
 
 const Product = ({ product }) => {
@@ -7,9 +8,13 @@ const Product = ({ product }) => {
     <div className="col-10 col-sm-8 col-md-6 col-lg-4  mx-auto my-3">
       <div className="card" style={{ minHeight: "100%" }}>
         <div style={{ maxHeight: "426px" }}>
-          <Img fluid={product.image.fluid} className="card-img-top" />
+          <Link to={`/product/${product.fields.slug}`}>
+            <Img fluid={product.image.fluid} className="card-img-top" />
+          </Link>
           <div className="card-body text-center">
-            <h6>{product.title}</h6>
+            <Link to={`/product/${product.fields.slug}`}>
+              <h6>{product.title}</h6>
+            </Link>
             <h6>${product.price}</h6>
             <button
               className="btn btn-yellow mt-3 text-capitalize snipcart-add-item"

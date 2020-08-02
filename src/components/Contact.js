@@ -13,7 +13,6 @@ const Contact = () => {
               action="https://formspree.io/lssuseendharlal@gmail.com"
               method="POST"
             >
-              <input type="text" name="_replyto" placeholder="lssuseendharlal@gmail.com" />
               <div className="form-group">
                 <label htmlFor="name">Name</label>
                 <input

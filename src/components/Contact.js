@@ -10,9 +10,10 @@ const Contact = () => {
         <div className="row">
           <div className="col-10 col-sm-8 col-md-6 mx-auto">
             <form
-              action="https://formspree.io/learncodetutorial@gmail.com"
+              action="https://formspree.io/lssuseendharlal@gmail.com"
               method="POST"
             >
+              <input type="text" name="_replyto" placeholder="lssuseendharlal@gmail.com" />
               <div className="form-group">
                 <label htmlFor="name">Name</label>
                 <input

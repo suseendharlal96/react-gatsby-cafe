@@ -55,7 +55,7 @@ const Header = ({ siteTitle }) => {
               style={{ height: "50px", width: "50px", cursor: "pointer" }}
               alt="cart"
               title="Cart"
-              className="cart-icon"
+              className="cart-icon snipcart-checkout"
             />
           </li>
         </ul>

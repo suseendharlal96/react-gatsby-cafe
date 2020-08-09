@@ -33,16 +33,6 @@ const SingleCategory = ({ data, pageContext }) => {
                           <h6>{product.title}</h6>
                         </Link>
                         <h6>${product.price}</h6>
-                        <button
-                          className="btn btn-yellow mt-3 text-capitalize snipcart-add-item"
-                          data-item-id={product.id}
-                          data-item-name={product.title}
-                          data-item-price={product.price}
-                          data-item-image={product.image.fluid.src}
-                          data-item-url="https://agape-cafe.netlify.app/"
-                        >
-                          add to cart
-                        </button>
                       </div>
                     </div>
                   </div>

@@ -26,7 +26,7 @@ const IndexPage = () => {
           id
           price
           image {
-            fixed(height: 50, width: 50) {
+            fixed(height: 100, width: 100) {
               ...GatsbyContentfulFixed
             }
           }
@@ -34,7 +34,7 @@ const IndexPage = () => {
             description
           }
           category
-          fields{
+          fields {
             slug
           }
         }

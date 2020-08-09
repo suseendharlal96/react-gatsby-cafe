@@ -68,11 +68,11 @@ const Menu = ({ items }) => {
                   key={node.id}
                   className="col-11 col-md-6 my-2 d-flex mx-auto"
                 >
-                  <div>
-                    <Link to={`/menu/${node.fields.slug}`}>
+                  <Link to={`/menu/${node.fields.slug}`}>
+                    <div className="zoom">
                       <Img fixed={node.image.fixed} />
-                    </Link>
-                  </div>
+                    </div>
+                  </Link>
 
                   <div className="flex-grow-1 px-3">
                     <div className="d-flex justify-content-between">

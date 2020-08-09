@@ -20,16 +20,6 @@ const singleMenu = ({ data, pageContext }) => {
             <Link to={`/category/${data.coffee.category.toLowerCase()}`}>
               <h6>{data.coffee.category}</h6>
             </Link>
-            <button
-              className="btn btn-yellow mt-3 text-capitalize snipcart-add-item"
-              data-item-id={data.coffee.id}
-              data-item-name={data.coffee.title}
-              data-item-price={data.coffee.price}
-              data-item-image={data.coffee.image.fluid.src}
-              data-item-url="https://agape-cafe.netlify.app/"
-            >
-              add to cart
-            </button>
           </div>
         </div>
       </div>

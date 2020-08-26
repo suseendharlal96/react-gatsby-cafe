@@ -11,4 +11,14 @@ export const CoffeeItemFragment = graphql`
       }
     }
   }
+fragment CoffeeProductFragment on ContentfulCoffeeProducts{
+    title
+    id
+    price
+    image {
+      fluid {
+        ...GatsbyContentfulFluid
+      }
+    }
+  }
 `;

@@ -30,14 +30,7 @@ const singleMenu = ({ data, pageContext }) => {
 export const menuQuery = graphql`
   query($slug: String!) {
     coffee: contentfulCoffeeItem(fields: { slug: { eq: $slug } }) {
-      title
-      id
-      price
-      image {
-        fluid {
-          ...GatsbyContentfulFluid
-        }
-      }
+      ...CoffeeItemFragment
       description {
         description
       }

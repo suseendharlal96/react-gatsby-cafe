@@ -37,14 +37,7 @@ const singleProduct = ({ data, pageContext }) => {
 export const productQuery = graphql`
   query($slug: String!) {
     product: contentfulCoffeeProducts(fields: { slug: { eq: $slug } }) {
-      title
-      id
-      price
-      image {
-        fluid {
-          ...GatsbyContentfulFluid
-        }
-      }
+    ...CoffeeItemFragment 
     }
   }
 `;

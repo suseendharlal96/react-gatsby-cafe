@@ -1,7 +1,7 @@
 import { graphql } from "gatsby";
 
 export const CoffeeItemFragment = graphql`
-  fragment CoffeeItemFragment on contentfulCoffeeItem {
+  fragment CoffeeItemFragment on ContentfulCoffeeItem {
     title
     id
     price

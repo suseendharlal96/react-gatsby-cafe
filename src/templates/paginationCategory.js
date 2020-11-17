@@ -1,27 +1,27 @@
 import React from "react";
-
 import { graphql } from "gatsby";
 
 import SEO from "../components/seo";
 import Title from "../components/Title";
 import Layout from "../components/layout";
+import Pagination from "../components/Pagination";
 import Category from "../components/Category";
 
-const SingleCategory = ({ data, pageContext }) => {
-  const { category } = pageContext;
-  const totalCount = data.products?.totalCount;
+const paginationCategory = ({ data, pageContext }) => {
+  const { tag, currentPage, totalPages } = pageContext;
+  const totalCount = data.products.totalCount;
   return (
     <Layout>
       <section className="py-5">
         <div className="container">
-          <Title title={category} />
-          <SEO title={category} />
+          <Title title={tag} />
+          <SEO title={tag} />
           <div className="row">
             {totalCount > 1 ? (
               <Category
+                tag={tag}
+                currentPage={currentPage}
                 totalCount={totalCount}
-                tag={category}
-                currentPage={1}
                 products={data.products.nodes.slice(0, 1)}
               />
             ) : (
@@ -37,10 +37,12 @@ const SingleCategory = ({ data, pageContext }) => {
   );
 };
 
-export const data = graphql`
-  query($category: String!) {
+export const paginationCategoryQuery = graphql`
+  query($tag: String!, $limit: Int!, $skip: Int!) {
     products: allContentfulCoffeeItem(
-      filter: { category: { in: [$category] } }
+      filter: { category: { in: [$tag] } }
+      limit: $limit
+      skip: $skip
     ) {
       nodes {
         id
@@ -60,4 +62,4 @@ export const data = graphql`
   }
 `;
 
-export default SingleCategory;
+export default paginationCategory;

@@ -22,6 +22,7 @@ exports.createPages = async ({ actions, graphql }) => {
   const template = {
     singleMenu: path.resolve("src/templates/singleMenu.js"),
     singleCategory: path.resolve("src/templates/singleCategory.js"),
+    paginationCategory: path.resolve("src/templates/paginationCategory.js"),
     singleProduct: path.resolve("src/templates/singleProduct.js"),
   };
 
@@ -65,18 +66,46 @@ exports.createPages = async ({ actions, graphql }) => {
     });
 
     const categories = [];
+    const allCategories = {};
     items.forEach((item) => {
       categories.push(item.category.toLowerCase());
-    });
-    const uniqueCategories = [...new Set(categories)];
-    uniqueCategories.forEach((category) => {
-      createPage({
-        path: `/category/${category}`,
-        component: template.singleCategory,
-        context: {
-          category,
-        },
+      const uniqueCategories = [...new Set(categories)];
+
+      uniqueCategories.forEach((category) => {
+        createPage({
+          path: `/category/${slugify(category)}`,
+          component: template.singleCategory,
+          context: {
+            category,
+          },
+        });
       });
+
+      allCategories[item.category] = (allCategories[item.category] || 0) + 1;
+      if (allCategories[item.category] > 1) {
+        const categoryPerPage = 1;
+        const totalPages = Math.ceil(
+          allCategories[item.category] / categoryPerPage
+        );
+        Array.from({ length: totalPages }).map((_, index) => {
+          const currentPage = index + 1;
+          if (index === 0) {
+            return;
+          } else {
+            createPage({
+              path: `/category/${slugify(item.category)}/${currentPage}`,
+              component: template.paginationCategory,
+              context: {
+                currentPage,
+                totalPages,
+                tag: item.category,
+                limit: categoryPerPage,
+                skip: index * categoryPerPage,
+              },
+            });
+          }
+        });
+      }
     });
   }
 };

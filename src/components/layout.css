@@ -39,6 +39,22 @@ h6 {
   background: var(--mainYellow) !important;
   color: var(--mainDark) !important;
 }
+.btn-page {
+  margin: 0 15px;
+  border-radius: 4px;
+  color: var(--mainYellow) !important;
+  border-color: var(--mainYellow) !important;
+}
+.btn-page:disabled {
+  cursor: no-drop;
+  background-color: gray;
+  color: #000000;
+}
+.btn-page:hover {
+  border-radius: 4px;
+  color: var(--mainYellow) !important;
+  border-color: var(--mainYellow) !important;
+}
 .default-background {
   min-height: 100vh;
   display: flex;
@@ -69,9 +85,10 @@ h6 {
   background: var(--mainDark);
 }
 .zoom:hover {
-  transform: scale(1.5); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+  transform: scale(
+    1.5
+  ); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
 }
 .zoom {
-  transition: transform .2s; /* Animation */
+  transition: transform 0.2s; /* Animation */
 }
-

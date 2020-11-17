@@ -35,13 +35,13 @@ module.exports = {
       options: {
         spaceId: `h6qz89wq1kfo`,
         // Learn about environment variables: https://gatsby.dev/env-vars
-        accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
+        accessToken: `${process.env.CONTENTFUL_ACCESS_TOKEN}`,
       },
     },
     {
       resolve: `gatsby-plugin-snipcart`,
       options: {
-        apiKey: process.env.SNIPCART_API,
+        apiKey: `${process.env.SNIPCART_API}`,
         autopop: true,
       },
     },

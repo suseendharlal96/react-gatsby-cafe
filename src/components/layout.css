@@ -40,7 +40,7 @@ h6 {
   color: var(--mainDark) !important;
 }
 .btn-page {
-  margin: 0 15px;
+  margin: 0 10px;
   border-radius: 4px;
   color: var(--mainYellow) !important;
   border-color: var(--mainYellow) !important;

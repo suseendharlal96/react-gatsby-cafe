@@ -4,7 +4,6 @@ import { graphql } from "gatsby";
 import SEO from "../components/seo";
 import Title from "../components/Title";
 import Layout from "../components/layout";
-import Pagination from "../components/Pagination";
 import Category from "../components/Category";
 
 const paginationCategory = ({ data, pageContext }) => {
